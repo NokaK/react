@@ -9,7 +9,7 @@ import Favorites from "../src/components/Favorites";
 class App extends Component {
   state = {
     books: [],
-    favorite: []
+    favorites: []
   };
   componentDidMount() {
     axios
@@ -23,15 +23,19 @@ class App extends Component {
         console.log(error);
       });
   }
+
   updateState = favorite => {
     let favorites = [...this.state.favorites, favorite];
+
     this.setState({
       favorites: favorites
     });
+
+    alert('სგ სგ სგ! :D')
   };
 
   render() {
-    const { books } = this.state;
+    const { books, favorites } = this.state;
     return (
       <BrowserRouter>
         <div>
@@ -46,7 +50,7 @@ class App extends Component {
           <Route path="/Details" component={Details} />
           <Route
             path="/Favorites"
-            component={() => <Favorites data={books} />}
+            component={() => <Favorites data={favorites} />}
           />
         </div>
       </BrowserRouter>

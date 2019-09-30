@@ -34,7 +34,7 @@ class Home extends Component {
                     <td>
                       <div
                         className="addfavoritebutton"
-                        onClick={this.handleClick}
+                        onClick={() => this.props.updateState(book)}
                       >
                         <FontAwesomeIcon icon={faHeart} />
                       </div>
